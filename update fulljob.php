@@ -10,12 +10,12 @@ if (isset($_POST['ubah'])) {
     if (update_fulljob($_POST) > 0) {
         echo "<script>
                 alert('Data Berhasil Diubah');
-                document.location.href = 'index-guru.php';
+                document.location.href = 'full-time-job.php';
               </script>";
     } else {
         echo "<script>
                 alert('Data Gagal Diubah');
-                document.location.href = 'index-guru.php';
+                document.location.href = 'full-time-job.php';
               </script>";
     }
 }

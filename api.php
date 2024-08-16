@@ -253,7 +253,7 @@ function create_level ($post){
     $level        = $post['level'];
 
 
-    $query = "INSERT INTO user_level VALUES (null ,'$level')";
+    $query = "INSERT INTO user_level VALUES (null,'$level')";
     mysqli_query($db, $query);
 
     return mysqli_affected_rows($db);

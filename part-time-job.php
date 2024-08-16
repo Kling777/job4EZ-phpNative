@@ -5,7 +5,11 @@ $data_parttime = select("SELECT parttime.*, users.id_user FROM parttime
 
 ?>
 <div class="container text-center">
-    <table class="table table-bordered table-striped mt-3">
+    <div class=" d-flex justify-content-between align-items-center me-3 mt-4">
+        <h3 class="">All Part Time Jobs Available</h3>
+        <a class="btn btn-outline-primary" href="create-parttime.php">Add data</a>
+    </div>
+    <table class="table table-bordered table-striped mt-2">
         <thead>
             <tr>
                 <th>No</th>

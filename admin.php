@@ -59,8 +59,8 @@ include_once 'header.php'
             <a href="full-time-job.php" class="btn btn-outline-danger">Full Time Job</a>
             <a href="part-time-job.php" class="btn btn-outline-danger mx-3">Part Time Job</a>
             <a href="employment.php" class="btn btn-outline-danger">Employment</a>
-            <a class="btn btn-outline-danger mx-3">Users</a>
-            <a class="btn btn-outline-danger">Role</a>
+            <a href="users.php" class="btn btn-outline-danger mx-3">Users</a>
+            <a href="level.php" class="btn btn-outline-danger">Role</a>
         </div>
     </div>
 </section>
