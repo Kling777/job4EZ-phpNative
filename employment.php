@@ -35,8 +35,8 @@ $data_employees = select("SELECT employment.*, users.id_user FROM employment
                     <td><?= $data['bio']; ?></td>
                     <td width="10%"><?= $data['id_user']; ?></td>
                     <td width="15%">
-                        <a href="update-employees.php?id=<?= $data['id']; ?>" class="btn"><ion-icon style="font-size: 26px; color: chocolate;" name="create-outline"></ion-icon></a>
-                        <a href="delete-employees.php?id=<?= $data['id']; ?>" class="btn" onclick="return confirm('apakah anda yakin ingin hapus data ini?')"><ion-icon style="font-size: 26px; color: red;" name="trash-outline"></ion-icon></a>
+                        <a href="update-employment.php?id=<?= $data['id']; ?>" class="btn"><ion-icon style="font-size: 26px; color: chocolate;" name="create-outline"></ion-icon></a>
+                        <a href="delete-employment.php?id=<?= $data['id']; ?>" class="btn" onclick="return confirm('apakah anda yakin ingin hapus data ini?')"><ion-icon style="font-size: 26px; color: red;" name="trash-outline"></ion-icon></a>
                     </td>
                 </tr>
             <?php endforeach ?>

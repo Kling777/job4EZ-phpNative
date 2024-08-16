@@ -1,42 +1,39 @@
 <?php
 
-include 'layout/header.php';
+include 'header.php';
 
-$id_mapel = (int)$_GET['id_mapel'];
+$id = (int)$_GET['id'];
 
-$mapel = select("SELECT * FROM mapel WHERE id_mapel = $id_mapel")[0];
+$level = select("SELECT * FROM user_level WHERE id = $id")[0];
 
 if (isset($_POST['ubah'])) {
-    if (update_mapel($_POST) > 0) {
+    if (update_level($_POST) > 0) {
         echo "<script>
                 alert('Data Berhasil Diubah');
-                document.location.href = 'index-mapel.php';
+                document.location.href = 'level.php';
               </script>";
     } else {
         echo "<script>
                 alert('Data Gagal Diubah');
-                document.location.href = 'index-mapel.php';
+                document.location.href = 'level.php';
               </script>";
     }
 }
 ?>
 
-
 <div class="container">
     <div class="row mt-3">
-        <h3>Ubah Data Baru</h3>
+        <h3>Ubah Data</h3>
     </div>
-
     <div class="row mt-3">
         <form method="POST" action="">
             <table class="table table-bordered">
                 <tbody>
-                    <input type="hidden" name="id_mapel" value="<?= $mapel['id_mapel']; ?>">
-                    <tr>
-                        <td>Nama Mapel</td>
+                    <input type="hidden" name="id" value="<?= $level['id']; ?>">
+                        <td>Role</td>
                         <td>
-                            <input autocomplete="off" id="nama_mapel" value="<?= $mapel['nama_mapel']; ?>" class="form-control" type="text"
-                                name="nama_mapel" required>
+                            <input autocomplete="off" id="level" value="<?= $level['level']; ?>" class="form-control" type="text"
+                                name="level" required>
                         </td>
                     </tr>
                     <tr>
