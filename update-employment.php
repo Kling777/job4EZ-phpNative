@@ -8,16 +8,22 @@ $users = select("SELECT * FROM users");
 $employment = select("SELECT * FROM employment WHERE id = $id")[0];
 
 if (isset($_POST['ubah'])) {
-    if (update_employment($_POST) > 0) {
+    if ($_POST['age'] < 17) {
         echo "<script>
-                alert('Data Succesfully Updated');
-                document.location.href = 'employment.php';
-              </script>";
+        alert('Age cannot be below 17');
+      </script>";
     } else {
-        echo "<script>
-                alert('Data Failed to Update');
-                document.location.href = 'employment.php';
-              </script>";
+        if (update_employment($_POST) > 0) {
+            echo "<script>
+                    alert('Data Succesfully Updated');
+                    document.location.href = 'employment.php';
+                  </script>";
+        } else {
+            echo "<script>
+                    alert('Data Failed to Update');
+                    document.location.href = 'employment.php';
+                  </script>";
+        }
     }
 }
 ?>

@@ -8,16 +8,22 @@ $level = select("SELECT * FROM user_level");
 $users = select("SELECT * FROM users WHERE id_user = $id")[0];
 
 if (isset($_POST['ubah'])) {
-    if (update_users($_POST) > 0) {
+    if ($_POST['age'] < 17) {
         echo "<script>
-                alert('Data Succesfully Updated');
-                document.location.href = 'users.php';
-              </script>";
+        alert('Age cannot be below 17');
+      </script>";
     } else {
-        echo "<script>
-                alert('Data Failed to Update');
-                document.location.href = 'users.php';
-              </script>";
+        if (update_users($_POST) > 0) {
+            echo "<script>
+                    alert('Data Succesfully Updated');
+                    document.location.href = 'users.php';
+                  </script>";
+        } else {
+            echo "<script>
+                    alert('Data Failed to Update');
+                    document.location.href = 'users.php';
+                  </script>";
+        }
     }
 }
 ?>
@@ -80,7 +86,7 @@ if (isset($_POST['ubah'])) {
                             <select name="id_level" required>
                                 <option value="">Choose User ID</option>
                                 <?php foreach ($level as $m) : ?>
-                                    <option value="<?= $m['id']; ?>" <?= $users['id_user'] == $m['id'] ? 'selected' : ''; ?>>
+                                    <option value="<?= $m['id']; ?>" <?= $users['id_level'] == $m['id'] ? 'selected' : ''; ?>>
                                         <?= $m['level']; ?>
                                     </option>
                                 <?php endforeach; ?>

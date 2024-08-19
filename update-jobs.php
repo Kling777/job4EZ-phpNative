@@ -9,16 +9,22 @@ $requirements = select("SELECT * FROM requirements");
 $jobs = select("SELECT * FROM jobs WHERE id = $id")[0];
 
 if (isset($_POST['ubah'])) {
-    if (update_jobs($_POST) > 0) {
+    if ($_POST['salary'] < 0) {
         echo "<script>
-                alert('Data Successfully Updated');
-                document.location.href = 'jobs.php';
-              </script>";
+        alert('Salary cannot be below 0');
+        </script>";
     } else {
-        echo "<script>
-                alert('Data Failed to Update');
-                document.location.href = 'jobs.php';
-              </script>";
+        if (update_jobs($_POST) > 0) {
+            echo "<script>
+                    alert('Data Successfully Updated');
+                    document.location.href = 'jobs.php';
+                    </script>";
+        } else {
+            echo "<script>
+                    alert('Data Failed to Update');
+                    document.location.href = 'jobs.php';
+                    </script>";
+        }
     }
 }
 ?>
@@ -61,8 +67,8 @@ if (isset($_POST['ubah'])) {
                     <tr>
                         <td>Jobs</td>
                         <td>
-                            <input autocomplete="off" id="jobs" value="<?= $jobs['jobs']; ?>" class="form-control" type="text"
-                                name="jobs" required>
+                            <input autocomplete=" off" id="jobs" value="<?= $jobs['jobs']; ?>" class="form-control" type="text"
+                                    name="jobs" required>
                         </td>
                     </tr>
                     <tr>

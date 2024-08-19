@@ -3,14 +3,14 @@
 include 'api.php';
 $id = (int)$_GET['id_user'];
 
-if (delete_users($id) > 0 ) {
+try {
+  if (delete_users($id) > 0) {
     echo "<script>
-            alert('Data Successfully Deleted');
-            document.location.href = 'users.php';
-          </script>";
-} else {
-    echo "<script>
-            alert('Data Failed to Delete');
-            document.location.href = 'users.php';
-          </script>";
-}
+              alert('Data Successfully Deleted');
+            </script>";
+  }
+} catch (Exception $e) {
+  echo "<script>alert('Cannot delete this record because it is referenced by another record.')</script>";
+} finally {
+  echo "<script>document.location.href = 'users.php';</script>";
+};

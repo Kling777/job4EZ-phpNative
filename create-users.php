@@ -5,16 +5,22 @@ include 'header.php';
 $level = select("SELECT * FROM user_level");
 
 if (isset($_POST['tambah'])) {
-    if (create_users($_POST) > 0) {
+    if ($_POST['age'] < 17) {
         echo "<script>
-                alert('Data Successfully Created');
-                document.location.href = 'users.php';
-              </script>";
+        alert('Age cannot be below 17');
+      </script>";
     } else {
-        echo "<script>
-                alert('Data Failed to Create');
-                document.location.href = 'users.php';
-              </script>";
+        if (create_users($_POST) > 0) {
+            echo "<script>
+                    alert('Data Successfully Created');
+                    document.location.href = 'users.php';
+                    </script>";
+        } else {
+            echo "<script>
+                    alert('Data Failed to Create');
+                    document.location.href = 'users.php';
+                  </script>";
+        }
     }
 }
 ?>

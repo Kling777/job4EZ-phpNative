@@ -6,16 +6,22 @@ $users = select("SELECT * FROM users");
 $requirements = select("SELECT * FROM requirements");
 
 if (isset($_POST['tambah'])) {
-    if (create_jobs($_POST) > 0) {
+    if($_POST['salary'] < 0){
         echo "<script>
-                alert('Data Succesfully Created');
-                document.location.href = 'jobs.php';
-              </script>";
-    } else {
-        echo "<script>
-                alert('Data Failed to Create');
-                document.location.href = 'jobs.php';
-              </script>";
+        alert('Salary cannot be below 0');
+      </script>";
+    } else {        
+        if (create_jobs($_POST) > 0) {
+            echo "<script>
+                    alert('Data Succesfully Created');
+                    document.location.href = 'jobs.php';
+                  </script>";
+        } else {
+            echo "<script>
+                    alert('Data Failed to Create');
+                    document.location.href = 'jobs.php';
+                  </script>";
+        }
     }
 }
 ?>

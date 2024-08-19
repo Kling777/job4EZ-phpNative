@@ -3,14 +3,17 @@
 include 'api.php';
 $id = (int)$_GET['id'];
 
-if (delete_requirements($id) > 0) {
+try {
+
+  if (delete_requirements($id) > 0) {
+    echo "<script>
+              alert('Data Successfully Deleted');
+            </script>";
+  }
+} catch (Exception $e) {
+  echo "<script>alert('Cannot delete this record because it is referenced by another record.')</script>";
+} finally {
   echo "<script>
-            alert('Data Successfully Deleted');
-            document.location.href = 'requirements.php';
-          </script>";
-} else {
-  echo "<script>
-            alert('Data Failed to Delete');
-            document.location.href = 'requirements.php';
-          </script>";
-}
+  document.location.href = 'requirements.php';
+  </script>";
+};

@@ -5,16 +5,22 @@ include 'header.php';
 $users = select("SELECT * FROM users");
 
 if (isset($_POST['tambah'])) {
-    if (create_employment($_POST) > 0) {
+    if ($_POST['age' < 17]) {
         echo "<script>
-                alert('Data Successfully Created');
-                document.location.href = 'employment.php';
-              </script>";
-    } else {
-        echo "<script>
-                alert('Data Failed to Create');
-                document.location.href = 'employment.php';
-              </script>";
+        alert('Age cannot be below 17');
+      </script>";
+    } else {        
+        if (create_employment($_POST) > 0) {
+            echo "<script>
+                    alert('Data Successfully Created');
+                    document.location.href = 'employment.php';
+                  </script>";
+        } else {
+            echo "<script>
+                    alert('Data Failed to Create');
+                    document.location.href = 'employment.php';
+                  </script>";
+        }
     }
 }
 ?>

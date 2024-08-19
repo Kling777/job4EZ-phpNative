@@ -3,14 +3,14 @@
 include 'api.php';
 $id = (int)$_GET['id'];
 
-if (delete_level($id) > 0 ) {
+try {
+  if (delete_level($id) > 0) {
     echo "<script>
-            alert('Data Successfully Delete');
-            document.location.href = 'level.php';
-          </script>";
-} else {
-    echo "<script>
-            alert('Data Failed to Delete');
-            document.location.href = 'level.php';
-          </script>";
-}
+              alert('Data Successfully Deleted');
+            </script>";
+  }
+} catch (Exception $e) {
+  echo "<script>alert('Cannot delete this record because it is referenced by another record.')</script>";
+} finally {
+  echo "<script>document.location.href = 'level.php';</script>";
+};
