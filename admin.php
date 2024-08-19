@@ -21,16 +21,10 @@ include_once 'header.php'
     <div class="container mt-5">
         <h3 class=" ms-2">Statistics</h3>
         <ul class=" list-group">
-            <li class=" list-group-item">Total of Full Time job:
+            <li class=" list-group-item">Total of jobs:
                 <?php
-                $result = select_count("SELECT COUNT(*) AS total_fulljob FROM fulljob");
-                echo $result[0]['total_fulljob'];
-                ?>
-            </li>
-            <li class=" list-group-item">Total of Part Time Job:
-                <?php
-                $result = select_count("SELECT COUNT(*) AS total_parttime FROM parttime");
-                echo $result[0]['total_parttime'];
+                $result = select_count("SELECT COUNT(*) AS total_jobs FROM jobs");
+                echo $result[0]['total_jobs'];
                 ?>
             </li>
             <li class=" list-group-item">Total of Employees for hire:
@@ -45,6 +39,12 @@ include_once 'header.php'
                 echo $result[0]['total_users'];
                 ?>
             </li>
+            <li class=" list-group-item">Total of Requirements:
+                <?php
+                $result = select_count("SELECT COUNT(*) AS total_req FROM requirements");
+                echo $result[0]['total_req'];
+                ?>
+            </li>
             <li class=" list-group-item">Total of Role:
                 <?php
                 $result = select_count("SELECT COUNT(*) AS total_level FROM user_level");
@@ -56,10 +56,10 @@ include_once 'header.php'
     <div class=" container mt-3">
         <h3 class=" text-center">All Table and Data</h3>
         <div class=" mt-1 d-flex justify-content-center">
-            <a href="full-time-job.php" class="btn btn-outline-danger">Full Time Job</a>
-            <a href="part-time-job.php" class="btn btn-outline-danger mx-3">Part Time Job</a>
-            <a href="employment.php" class="btn btn-outline-danger">Employment</a>
-            <a href="users.php" class="btn btn-outline-danger mx-3">Users</a>
+            <a href="jobs.php" class="btn btn-outline-danger">Jobs</a>
+            <a href="employment.php" class="btn btn-outline-danger mx-3">Employment</a>
+            <a href="users.php" class="btn btn-outline-danger">Users</a>
+            <a href="requirements.php" class="btn btn-outline-danger mx-3">Requirements</a>
             <a href="level.php" class="btn btn-outline-danger">Role</a>
         </div>
     </div>

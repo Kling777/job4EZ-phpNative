@@ -7,12 +7,12 @@ $users = select("SELECT * FROM users");
 if (isset($_POST['tambah'])) {
     if (create_employment($_POST) > 0) {
         echo "<script>
-                alert('Data Berhasil Ditambah');
+                alert('Data Successfully Created');
                 document.location.href = 'employment.php';
               </script>";
     } else {
         echo "<script>
-                alert('Data Gagal ditambahkan');
+                alert('Data Failed to Create');
                 document.location.href = 'employment.php';
               </script>";
     }

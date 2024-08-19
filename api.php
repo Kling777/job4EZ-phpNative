@@ -28,26 +28,28 @@ function select($query)
 }
 
 // create full job
-function create_fulljob($post)
+function create_jobs($post)
 {
 
     global $db;
 
     $name       = $post['name'];
     $address        = $post['address'];
+    $require = $post['require'];
     $jobs  = $post['jobs'];
     $salary    = $post['salary'];
-    $id_user     = $post['id_user'];
+    $status = $post['status'];
+    $username     = $post['username'];
 
 
-    $query = "INSERT INTO fulljob VALUES(null, '$name' , '$address', '$jobs' , $salary , $id_user)";
+    $query = "INSERT INTO jobs VALUES(null, '$name' , '$address', '$require', '$jobs' , $salary , '$status', '$username')";
     mysqli_query($db, $query);
 
     return mysqli_affected_rows($db);
 }
 
-// update fulljob 
-function update_fulljob($post)
+// update jobs
+function update_jobs($post)
 {
 
     global $db;
@@ -55,12 +57,14 @@ function update_fulljob($post)
     $id   = $post['id'];
     $name       = $post['name'];
     $address        = $post['address'];
+    $require = $post['require'];
     $jobs  = $post['jobs'];
     $salary    = $post['salary'];
-    $id_user     = $post['id_user'];
+    $status = $post['status'];
+    $username     = $post['username'];
 
 
-    $query = "UPDATE fulljob SET name = '$name' , address = '$address' , jobs = '$jobs' , salary = $salary , id_user = $id_user WHERE id = $id";
+    $query = "UPDATE jobs SET `name` = '$name' , `address` = '$address' , `require` = '$require', `jobs` = '$jobs' , `salary` = $salary , `status` = '$status' , `username` = '$username' WHERE id = $id";
 
     mysqli_query($db, $query);
 
@@ -68,12 +72,12 @@ function update_fulljob($post)
 }
 
 //delete fulljob
-function delete_fulljob($id)
+function delete_jobs($id)
 {
 
     global $db;
 
-    $query = "DELETE FROM fulljob WHERE id = $id";
+    $query = "DELETE FROM jobs WHERE id = $id";
 
     mysqli_query($db, $query);
 
@@ -81,38 +85,28 @@ function delete_fulljob($id)
 }
 
 // create part time jobs
-function create_parrtime($post)
+function create_requirements($post)
 {
 
     global $db;
+    $require = $post['require'];
 
-    $name       = $post['name'];
-    $address        = $post['address'];
-    $jobs  = $post['jobs'];
-    $salary    = $post['salary'];
-    $id_user     = $post['id_user'];
-
-
-    $query = "INSERT INTO parttime VALUES(null, '$name','$address','$jobs',$salary,$id_user)";
+    $query = "INSERT INTO requirements VALUES(null, '$require')";
     mysqli_query($db, $query);
 
     return mysqli_affected_rows($db);
 }
 
 // update parttime table
-function update_parttime($post)
+function update_requirements($post)
 {
 
     global $db;
 
     $id   = $post['id'];
-    $name       = $post['name'];
-    $address        = $post['address'];
-    $jobs  = $post['jobs'];
-    $salary    = $post['salary'];
-    $id_user     = $post['id_user'];
+    $require = $post['require'];
 
-    $query = "UPDATE parttime SET name = '$name', address = '$address', jobs = '$jobs', salary = $salary, id_user = $id_user  WHERE id = $id";
+    $query = "UPDATE requirements SET `require` = '$require' WHERE id = $id";
 
     mysqli_query($db, $query);
 
@@ -120,12 +114,12 @@ function update_parttime($post)
 }
 
 // delete parttime data
-function delete_parttime($id)
+function delete_requirements($id)
 {
 
     global $db;
 
-    $query = "DELETE FROM parttime WHERE id = $id";
+    $query = "DELETE FROM requirements WHERE id = $id";
 
     mysqli_query($db, $query);
 

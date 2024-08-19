@@ -14,9 +14,6 @@ include_once 'header.php';
         <section>
             <div class="container text-center">
                 <h3>Available Full Time Jobs</h3>
-                <?php include_once 'index-fulljob.php' ?>
-                <h3>Available Part Time Jobs</h3>
-                <?php include_once 'index-parttime.php' ?>
-            </div>
+                <?php include_once 'index-jobs.php' ?>
         </section>
     </main>

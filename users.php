@@ -39,7 +39,7 @@ $data_users = select("SELECT users.*, user_level.level FROM users
                     <td><?= $data['level']; ?></td>
                     <td width="15%">
                         <a href="update-users.php?id_user=<?= $data['id_user']; ?>" class="btn"><ion-icon style="font-size: 26px; color: chocolate;" name="create-outline"></ion-icon></a>
-                        <a href="delete-users.php?id_user=<?= $data['id_user']; ?>" class="btn" onclick="return confirm('Serius Nak Hapus Ke Ni??')"><ion-icon style="font-size: 26px; color: red;" name="trash-outline"></ion-icon></a>
+                        <a href="delete-users.php?id_user=<?= $data['id_user']; ?>" class="btn" onclick="return confirm('are you sure you want to delete this item?')"><ion-icon style="font-size: 26px; color: red;" name="trash-outline"></ion-icon></a>
                     </td>
                 </tr>
             <?php endforeach ?>

@@ -3,14 +3,14 @@
 include 'api.php';
 $id = (int)$_GET['id'];
 
-if (delete_level($id) > 0 ) {
+if (delete_jobs($id) > 0 ) {
     echo "<script>
-            alert('Data Successfully Delete');
-            document.location.href = 'level.php';
+            alert('Data Sucessfully Deleted');
+            document.location.href = 'jobs.php';
           </script>";
 } else {
     echo "<script>
             alert('Data Failed to Delete');
-            document.location.href = 'level.php';
+            document.location.href = 'jobs.php';
           </script>";
 }

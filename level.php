@@ -25,7 +25,7 @@ $data_level = select("SELECT * FROM user_level");
                     <td><?= $data['level']; ?></td>
                     <td width="15%">
                         <a href="update-level.php?id=<?= $data['id']; ?>" class="btn"><ion-icon style="font-size: 26px; color: chocolate;" name="create-outline"></ion-icon></a>
-                        <a href="delete-level.php?id=<?= $data['id']; ?>" class="btn" onclick="return confirm('apakah anda yakin ingin hapus data ini?')"><ion-icon style="font-size: 26px; color: red;" name="trash-outline"></ion-icon></a>
+                        <a href="delete-level.php?id=<?= $data['id']; ?>" class="btn" onclick="return confirm('are you sure you want to delete this item?')"><ion-icon style="font-size: 26px; color: red;" name="trash-outline"></ion-icon></a>
                     </td>
                 </tr>
             <?php endforeach ?>

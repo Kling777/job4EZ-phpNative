@@ -10,12 +10,12 @@ $users = select("SELECT * FROM users WHERE id_user = $id")[0];
 if (isset($_POST['ubah'])) {
     if (update_users($_POST) > 0) {
         echo "<script>
-                alert('Data Berhasil Diubah');
+                alert('Data Succesfully Updated');
                 document.location.href = 'users.php';
               </script>";
     } else {
         echo "<script>
-                alert('Data Gagal Diubah');
+                alert('Data Failed to Update');
                 document.location.href = 'users.php';
               </script>";
     }
@@ -24,7 +24,7 @@ if (isset($_POST['ubah'])) {
 
 <div class="container">
     <div class="row mt-3">
-        <h3>Ubah Data Baru</h3>
+        <h3>Please Complete This Form</h3>
     </div>
     <div class="row mt-3">
         <form method="POST" action="">

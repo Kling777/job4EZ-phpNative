@@ -3,17 +3,18 @@
 include 'header.php';
 
 $users = select("SELECT * FROM users");
+$requirements = select("SELECT * FROM requirements");
 
 if (isset($_POST['tambah'])) {
-    if (create_fulljob($_POST) > 0) {
+    if (create_jobs($_POST) > 0) {
         echo "<script>
-                alert('Data Berhasil Ditambah');
-                document.location.href = 'full-time-job.php';
+                alert('Data Succesfully Created');
+                document.location.href = 'jobs.php';
               </script>";
     } else {
         echo "<script>
-                alert('Data Gagal ditambahkan');
-                document.location.href = 'full-time-job.php';
+                alert('Data Failed to Create');
+                document.location.href = 'jobs.php';
               </script>";
     }
 }
@@ -42,6 +43,17 @@ if (isset($_POST['tambah'])) {
                         </td>
                     </tr>
                     <tr>
+                        <td>Require</td>
+                        <td>
+                            <select name="require" required>
+                                <option value="">Requirements</option>
+                                <?php foreach ($requirements as $r) : ?>
+                                    <option value="<?= $r['require']; ?>"><?= $r['require']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Jobs</td>
                         <td>
                             <input autocomplete="off" id="jobs" value="" class="form-control" type="text"
@@ -55,12 +67,20 @@ if (isset($_POST['tambah'])) {
                         </td>
                     </tr>
                     <tr>
-                        <td>User ID</td>
+                        <td>Status</td>
                         <td>
-                            <select name="id_user" required>
-                                <option value="">ID User</option>
+                            <input class="" type="radio" name="status" id="status" value="full time" required><label for="full time">Full time</label>
+                            <br>
+                            <input class="" type="radio" name="status" id="status" value="part time" required><label for="part time">Part time</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td>
+                            <select name="username" required>
+                                <option value="">Username</option>
                                 <?php foreach ($users as $m) : ?>
-                                    <option value="<?= $m['id_user']; ?>"><?= $m['username']; ?></option>
+                                    <option value="<?= $m['username']; ?>"><?= $m['username']; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </td>

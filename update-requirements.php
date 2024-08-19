@@ -1,21 +1,20 @@
 <?php
-
-include 'header.php';
+include_once 'header.php';
 
 $id = (int)$_GET['id'];
 
-$level = select("SELECT * FROM user_level WHERE id = $id")[0];
+$requirements = select("SELECT * FROM requirements WHERE id = $id")[0];
 
 if (isset($_POST['ubah'])) {
-    if (update_level($_POST) > 0) {
+    if (update_requirements($_POST) > 0) {
         echo "<script>
                 alert('Data Successfully Updated');
-                document.location.href = 'level.php';
+                document.location.href = 'requirements.php';
               </script>";
     } else {
         echo "<script>
                 alert('Data Failed to Update');
-                document.location.href = 'level.php';
+                document.location.href = 'requirements.php';
               </script>";
     }
 }
@@ -29,11 +28,12 @@ if (isset($_POST['ubah'])) {
         <form method="POST" action="">
             <table class="table table-bordered">
                 <tbody>
-                    <input type="hidden" name="id" value="<?= $level['id']; ?>">
-                        <td>Role</td>
+                    <input type="hidden" name="id" value="<?= $requirements['id']; ?>">
+                    <tr>
+                        <td>Require</td>
                         <td>
-                            <input autocomplete="off" id="level" value="<?= $level['level']; ?>" class="form-control" type="text"
-                                name="level" required>
+                            <input autocomplete="off" id="require" value="<?= $requirements['require']; ?>" class="form-control" type="text"
+                                name="require" required>
                         </td>
                     </tr>
                     <tr>

@@ -20,7 +20,7 @@ if (isset($_POST['tambah'])) {
 
 <div class="container">
     <div class="row mt-3">
-        <h3>Tambah Data Baru</h3>
+        <h3>Register a new users</h3>
     </div>
 
     <div class="row mt-3">
@@ -44,8 +44,15 @@ if (isset($_POST['tambah'])) {
                     <tr>
                         <td>Email</td>
                         <td>
-                            <input autocomplete="off" id="Email" value="" class="form-control" type="text"
-                                name="Email" required>
+                            <input autocomplete="off" id="Email" value="" class="form-control" type="email"
+                                name="email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>
+                            <input autocomplete="off" id="age" value="" class="form-control" type="number"
+                                name="age" required>
                         </td>
                     </tr>
                     <tr>
@@ -62,17 +69,7 @@ if (isset($_POST['tambah'])) {
                                 name="bio" required>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Role</td>
-                        <td>
-                            <select name="id_level" required>
-                                <option value="">Pilih Role</option>
-                                <?php foreach ($level as $g) : ?>
-                                    <option value="<?= $g['id']; ?>"><?= $g['level']; ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </td>
-                    </tr>
+                    <input type="hidden" name="id_level" value="1">
                     <tr>
                         <td></td>
                         <td>

@@ -4,19 +4,20 @@ include 'header.php';
 
 
 if (isset($_POST['tambah'])) {
-    if (create_level($_POST) > 0) {
+    if (create_requirements($_POST) > 0) {
         echo "<script>
-                alert('Data Succesfully Created');
-                document.location.href = 'level.php';
+                alert('Data Successfully Created');
+                document.location.href = 'requirements.php';
               </script>";
     } else {
         echo "<script>
-                alert('Data Failed to create');
-                document.location.href = 'level.php';
+                alert('Data Failed to Create');
+                document.location.href = 'requirements.php';
               </script>";
     }
 }
 ?>
+
 <div class="container">
     <div class="row mt-3">
         <h3>Please Complete This Form</h3>
@@ -26,10 +27,10 @@ if (isset($_POST['tambah'])) {
             <table class="table table-bordered">
                 <tbody>
                     <tr>
-                        <td>Role Name</td>
+                        <td>Require</td>
                         <td>
-                            <input autocomplete="off" id="level" value="" class="form-control" type="text"
-                                name="level" required>
+                            <input autocomplete="off" id="name" value="" class="form-control" type="text"
+                                name="require" required>
                         </td>
                     </tr>
                     <tr>
