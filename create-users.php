@@ -57,7 +57,7 @@ if (isset($_POST['tambah'])) {
                     <tr>
                         <td>Age</td>
                         <td>
-                            <input autocomplete="off" class=" form-control" type="number" name="age" id="age" required>
+                            <input autocomplete="off" class=" form-control" type="number" name="age" id="age" min="17" required>
                         </td>
                     </tr>
                     <tr>

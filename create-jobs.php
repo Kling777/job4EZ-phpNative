@@ -69,7 +69,7 @@ if (isset($_POST['tambah'])) {
                     <tr>
                         <td>Salary</td>
                         <td>
-                            <input autocomplete="off" class=" form-control" type="number" name="salary" id="salary" required>
+                            <input autocomplete="off" class=" form-control" type="number" name="salary" id="salary" min="1" required>
                         </td>
                     </tr>
                     <tr>

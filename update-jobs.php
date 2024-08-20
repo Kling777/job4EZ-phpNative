@@ -75,7 +75,7 @@ if (isset($_POST['ubah'])) {
                         <td>Salary</td>
                         <td>
                             <input autocomplete="off" id="jobs" value="<?= $jobs['salary']; ?>" class="form-control" type="number"
-                                name="salary" required>
+                                name="salary" min="1" required>
                         </td>
                     </tr>
                     <tr>
