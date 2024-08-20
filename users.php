@@ -8,7 +8,10 @@ $data_users = select("SELECT users.*, user_level.level FROM users
 ?>
 <div class="container text-center">
     <div class=" d-flex justify-content-between align-items-center me-3 mt-4">
-        <h3 class="">All Users Available</h3>
+        <h3 class="">All Users Available : <?php
+                                            $result = select_count("SELECT COUNT(*) AS total_users FROM users");
+                                            echo $result[0]['total_users'];
+                                            ?></h3>
         <a class="btn btn-outline-primary" href="create-users.php">Add data</a>
     </div>
     <table class="table table-bordered table-striped mt-2">
@@ -20,6 +23,7 @@ $data_users = select("SELECT users.*, user_level.level FROM users
                 <th>Email</th>
                 <th>Age</th>
                 <th>Phone</th>
+                <th>Status</th>
                 <th>Bio</th>
                 <th>User Role</th>
                 <th>Aksi</th>
@@ -35,6 +39,7 @@ $data_users = select("SELECT users.*, user_level.level FROM users
                     <td><?= $data['email']; ?></td>
                     <td><?= $data['age']; ?></td>
                     <td><?= $data['phone']; ?></td>
+                    <td><?= $data['status']; ?></td>
                     <td><?= $data['bio']; ?></td>
                     <td><?= $data['level']; ?></td>
                     <td width="15%">

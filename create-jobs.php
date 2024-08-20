@@ -2,7 +2,7 @@
 
 include 'header.php';
 
-$users = select("SELECT * FROM users");
+$users = select("SELECT * FROM users WHERE `status` = 'industry'");
 $requirements = select("SELECT * FROM requirements");
 
 if (isset($_POST['tambah'])) {
@@ -35,7 +35,7 @@ if (isset($_POST['tambah'])) {
             <table class="table table-bordered">
                 <tbody>
                     <tr>
-                        <td>Name</td>
+                        <td>Name/Industry</td>
                         <td>
                             <input autocomplete="off" id="name" value="" class="form-control" type="text"
                                 name="name" required>

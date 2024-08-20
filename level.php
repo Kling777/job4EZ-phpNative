@@ -6,7 +6,10 @@ $data_level = select("SELECT * FROM user_level");
 ?>
 <div class="container text-center">
     <div class=" d-flex justify-content-between align-items-center me-3 mt-4">
-        <h3 class="">All Role Available</h3>
+        <h3 class="">All Role Available : <?php
+                                            $result = select_count("SELECT COUNT(*) AS total_level FROM user_level");
+                                            echo $result[0]['total_level'];
+                                            ?></h3>
         <a class="btn btn-outline-primary" href="create-level.php">Add data</a>
     </div>
     <table class="table table-bordered table-striped mt-2">

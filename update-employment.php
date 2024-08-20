@@ -3,7 +3,7 @@ include_once 'header.php';
 
 $id = (int)$_GET['id'];
 
-$users = select("SELECT * FROM users");
+$users = select("SELECT * FROM users WHERE `status` = 'worker'");
 
 $employment = select("SELECT * FROM employment WHERE id = $id")[0];
 
@@ -75,11 +75,11 @@ if (isset($_POST['ubah'])) {
                     <tr>
                         <td>User ID</td>
                         <td>
-                            <select name="id_user" required>
-                                <option value="">Choose User ID</option>
+                            <select name="username" required>
+                                <option value="">Choose Username</option>
                                 <?php foreach ($users as $m) : ?>
-                                    <option value="<?= $m['id_user']; ?>" <?= $employment['id_user'] == $m['id_user'] ? 'selected' : ''; ?>>
-                                        <?= $m['id_user']; ?>
+                                    <option value="<?= $m['username']; ?>" <?= $employment['username'] == $m['username'] ? 'selected' : ''; ?>>
+                                        <?= $m['username']; ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>

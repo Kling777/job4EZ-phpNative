@@ -138,11 +138,12 @@ function create_users($post)
     $email  = $post['email'];
     $age    = $post['age'];
     $phone   = $post['phone'];
+    $status = $post['status'];
     $bio   = $post['bio'];
     $id_level   = $post['id_level'];
 
 
-    $query = "INSERT INTO users VALUES (null,'$name' , '$username', '$email' , $age , '$phone', '$bio', $id_level)";
+    $query = "INSERT INTO users VALUES (null,'$name' , '$username', '$email' , $age , '$phone','$status', '$bio', $id_level)";
     mysqli_query($db, $query);
 
     return mysqli_affected_rows($db);
@@ -160,11 +161,12 @@ function update_users($post)
     $email  = $post['email'];
     $age    = $post['age'];
     $phone   = $post['phone'];
+    $status = $post['status'];
     $bio   = $post['bio'];
     $id_level   = $post['id_level'];
 
 
-    $query = "UPDATE users SET real_name = '$name', username = '$username', email = '$email', age = $age, phone = '$phone', bio = '$bio', id_level = $id_level WHERE id_user = $id_user";
+    $query = "UPDATE users SET real_name = '$name', username = '$username', email = '$email', age = $age, phone = '$phone', `status` = '$status', bio = '$bio', id_level = $id_level WHERE id_user = $id_user";
 
     mysqli_query($db, $query);
 
@@ -195,9 +197,9 @@ function create_employment($post)
     $phone   = $post['phone'];
     $email  = $post['email'];
     $bio   = $post['bio'];
-    $id_user   = $post['id_user'];
+    $username   = $post['username'];
 
-    $query = "INSERT INTO employment VALUES (null, '$name', $age, '$phone', '$email','$bio', $id_user)";
+    $query = "INSERT INTO employment VALUES (null, '$name', $age, '$phone', '$email','$bio', '$username')";
     mysqli_query($db, $query);
 
     return mysqli_affected_rows($db);
@@ -215,11 +217,11 @@ function update_employment($post)
     $phone   = $post['phone'];
     $email  = $post['email'];
     $bio   = $post['bio'];
-    $id_user   = $post['id_user'];
+    $username   = $post['username'];
 
 
 
-    $query = "UPDATE employment SET real_name = '$name', age = $age, phone = '$phone', email = '$email', bio = '$bio', id_user = $id_user WHERE id = $id";
+    $query = "UPDATE employment SET `real_name` = '$name', `age` = $age, `phone` = '$phone', `email` = '$email', `bio` = '$bio', `username` = '$username' WHERE id = $id";
 
     mysqli_query($db, $query);
 

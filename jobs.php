@@ -6,7 +6,10 @@ $data_fulljob = select("SELECT jobs.*, users.username, requirements.require FROM
 ?>
 <div class="container text-center">
     <div class=" d-flex justify-content-between align-items-center me-3 mt-4">
-        <h3 class="" >All Full Time Jobs Available</h3>
+        <h3 class="">All Full Time Jobs Available : <?php
+                                                    $result = select_count("SELECT COUNT(*) AS total_jobs FROM jobs");
+                                                    echo $result[0]['total_jobs'];
+                                                    ?></h3>
         <a class="btn btn-outline-primary" href="create-jobs.php">Add data</a>
     </div>
     <div>

@@ -68,6 +68,14 @@ if (isset($_POST['tambah'])) {
                         </td>
                     </tr>
                     <tr>
+                    <td>Status</td>
+                        <td>
+                            <input class="" type="radio" name="status" id="status" value="industry" required><label for="industry">Industry</label>
+                            <br>
+                            <input class="" type="radio" name="status" id="status" value="worker" required><label for="worker">Worker</label>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Bio</td>
                         <td>
                             <input autocomplete="off" id="bio" value="" class="form-control" type="text"
@@ -78,7 +86,7 @@ if (isset($_POST['tambah'])) {
                         <td>Role</td>
                         <td>
                             <select name="id_level" required>
-                                <option value="">ID User</option>
+                                <option value="">User role</option>
                                 <?php foreach ($level as $m) : ?>
                                     <option value="<?= $m['id']; ?>"><?= $m['level']; ?></option>
                                 <?php endforeach; ?>

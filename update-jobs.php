@@ -3,7 +3,7 @@ include_once 'header.php';
 
 $id = (int)$_GET['id'];
 
-$users = select("SELECT * FROM users");
+$users = select("SELECT * FROM users WHERE `status` = 'industry'");
 $requirements = select("SELECT * FROM requirements");
 
 $jobs = select("SELECT * FROM jobs WHERE id = $id")[0];

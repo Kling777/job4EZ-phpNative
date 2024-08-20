@@ -2,7 +2,7 @@
 
 include 'header.php';
 
-$users = select("SELECT * FROM users");
+$users = select("SELECT * FROM users WHERE `status` = 'worker'");
 
 if (isset($_POST['tambah'])) {
     if ($_POST['age' < 17]) {
@@ -68,12 +68,12 @@ if (isset($_POST['tambah'])) {
                         </td>
                     </tr>
                     <tr>
-                        <td>User ID</td>
+                        <td>Username</td>
                         <td>
-                            <select name="id_user" required>
-                                <option value="">ID User</option>
+                            <select name="username" required>
+                                <option value="">Username</option>
                                 <?php foreach ($users as $m) : ?>
-                                    <option value="<?= $m['id_user']; ?>"><?= $m['username']; ?></option>
+                                    <option value="<?= $m['username']; ?>"><?= $m['username']; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </td>

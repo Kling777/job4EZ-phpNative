@@ -56,11 +56,6 @@ include_once 'header.php'
     <div class=" container mt-3">
         <h3 class=" text-center">All Table and Data</h3>
         <div class=" mt-1 d-flex justify-content-center">
-            <a href="jobs.php" class="btn btn-outline-danger">Jobs</a>
-            <a href="employment.php" class="btn btn-outline-danger mx-3">Employment</a>
-            <a href="users.php" class="btn btn-outline-danger">Users</a>
-            <a href="requirements.php" class="btn btn-outline-danger mx-3">Requirements</a>
-            <a href="level.php" class="btn btn-outline-danger">Role</a>
         </div>
     </div>
 </section>

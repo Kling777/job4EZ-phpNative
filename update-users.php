@@ -74,6 +74,14 @@ if (isset($_POST['ubah'])) {
                         </td>
                     </tr>
                     <tr>
+                        <td>Status</td>
+                        <td>
+                            <input class="" type="radio" name="status" id="status" value="industry" <?php if ($users['status'] == 'industry') echo 'checked';  ?> required><label for="industry">Industry</label>
+                            <br>
+                            <input class="" type="radio" name="status" id="status" value="worker" <?php if ($users['status'] == 'worker') echo 'checked';  ?> required><label for="worker">Worker</label>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Bio</td>
                         <td>
                             <input autocomplete="off" id="bio" value="<?= $users['bio']; ?>" class="form-control" type="text"

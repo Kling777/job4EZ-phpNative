@@ -1,4 +1,20 @@
 <?php
+function select_count($query)
+{
+    global $db;
+
+    $result = mysqli_query($db, $query);
+    if (!$result) {
+        die('Query Error: ' . mysqli_error($db));
+    }
+
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
+
 
 include 'api.php';
 
@@ -13,8 +29,8 @@ include 'api.php';
     <title>Jobs4EZ</title>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <style>
@@ -26,10 +42,11 @@ include 'api.php';
         font-weight: 400;
         font-style: normal;
     }
+
     ion-icon {
         font-size: 32px;
     }
-    
+
     #navlog {
         font-weight: bold;
         font-size: 48px;
@@ -43,18 +60,21 @@ include 'api.php';
                 <a class="navbar-brand" id="navlog" href="dashboard.php">JOBS4EZ</a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav align-items-center">
-                        <a class="btn btn-outline-light" href="dashboard.php">Home</a>
-                        <a class="btn btn-outline-light mx-3" href="employees.php">Employees</a>
-                        <a class="nav-link mt-1" href="admin.php"><ion-icon  name="construct-sharp"></ion-icon></a>
+                        <a href="jobs.php" class="btn btn-outline-light">Jobs</a>
+                        <a href="employment.php" class="btn btn-outline-light mx-3">Employment</a>
+                        <a href="users.php" class="btn btn-outline-light">Users</a>
+                        <a href="requirements.php" class="btn btn-outline-light mx-3">Requirements</a>
+                        <a href="level.php" class="btn btn-outline-light">Role</a>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
-    
-    
+
+
     <script src="bootstrap/js/bootstrap.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
