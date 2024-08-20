@@ -70,8 +70,8 @@ if (isset($_POST['tambah'])) {
                     <tr>
                         <td>Username</td>
                         <td>
-                            <select name="username" required>
-                                <option value="">Username</option>
+                            <select name="username" class="form-select" required>
+                                <option value="" selected>Username</option>
                                 <?php foreach ($users as $m) : ?>
                                     <option value="<?= $m['username']; ?>"><?= $m['username']; ?></option>
                                 <?php endforeach; ?>

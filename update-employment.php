@@ -75,7 +75,7 @@ if (isset($_POST['ubah'])) {
                     <tr>
                         <td>User ID</td>
                         <td>
-                            <select name="username" required>
+                            <select name="username" class="form-select" required>
                                 <option value="">Choose Username</option>
                                 <?php foreach ($users as $m) : ?>
                                     <option value="<?= $m['username']; ?>" <?= $employment['username'] == $m['username'] ? 'selected' : ''; ?>>

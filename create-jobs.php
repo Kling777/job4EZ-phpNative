@@ -51,8 +51,8 @@ if (isset($_POST['tambah'])) {
                     <tr>
                         <td>Require</td>
                         <td>
-                            <select name="require" required>
-                                <option value="">Requirements</option>
+                            <select name="require" class="form-select" required>
+                                <option value="" selected>Requirements</option>
                                 <?php foreach ($requirements as $r) : ?>
                                     <option value="<?= $r['require']; ?>"><?= $r['require']; ?></option>
                                 <?php endforeach; ?>
@@ -75,16 +75,18 @@ if (isset($_POST['tambah'])) {
                     <tr>
                         <td>Status</td>
                         <td>
-                            <input class="" type="radio" name="status" id="status" value="full time" required><label for="full time">Full time</label>
-                            <br>
-                            <input class="" type="radio" name="status" id="status" value="part time" required><label for="part time">Part time</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="status" value="full time" checked required><label class="form-check-label" for="full time">Full time</label>
+                                <br>
+                                <input class="form-check-input" type="radio" name="status" id="status" value="part time" required><label class="form-check-label" for="part time">Part time</label>
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>Username</td>
                         <td>
-                            <select name="username" required>
-                                <option value="">Username</option>
+                            <select name="username" class="form-select" required>
+                                <option value="" selected>Username</option>
                                 <?php foreach ($users as $m) : ?>
                                     <option value="<?= $m['username']; ?>"><?= $m['username']; ?></option>
                                 <?php endforeach; ?>

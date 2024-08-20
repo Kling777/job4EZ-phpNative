@@ -70,9 +70,11 @@ if (isset($_POST['tambah'])) {
                     <tr>
                     <td>Status</td>
                         <td>
-                            <input class="" type="radio" name="status" id="status" value="industry" required><label for="industry">Industry</label>
-                            <br>
-                            <input class="" type="radio" name="status" id="status" value="worker" required><label for="worker">Worker</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="status" value="industry" checked required><label class="form-check-label" for="industry">Industry</label>
+                                <br>
+                                <input class="form-check-input" type="radio" name="status" id="status" value="worker" required><label class="form-check-label" for="worker">Worker</label>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -85,8 +87,8 @@ if (isset($_POST['tambah'])) {
                     <tr>
                         <td>Role</td>
                         <td>
-                            <select name="id_level" required>
-                                <option value="">User role</option>
+                            <select name="id_level" class="form-select" required>
+                                <option value="" selected>User role</option>
                                 <?php foreach ($level as $m) : ?>
                                     <option value="<?= $m['id']; ?>"><?= $m['level']; ?></option>
                                 <?php endforeach; ?>

@@ -55,7 +55,7 @@ if (isset($_POST['ubah'])) {
                     <tr>
                         <td>Require</td>
                         <td>
-                            <select name="require" id="">
+                            <select name="require" class="form-select" required>
                                 <option value="">Requirements</option>
                                 <?php foreach ($requirements as $r) ?>
                                 <option value="<?= $r['require']; ?>" <?= $jobs['require'] == $r['require'] ? 'selected' : ''; ?> ">
@@ -81,17 +81,19 @@ if (isset($_POST['ubah'])) {
                     <tr>
                         <td>Status</td>
                         <td>
-                            <input type="radio" name="status" value="full time" <?php if ($jobs['status'] == 'full time') echo 'checked'; ?> id="" required>
-                            <label for="full time">Full Time</label>
-                            <br>
-                            <input type="radio" name="status" value="part time" <?php if ($jobs['status'] == 'part time') echo 'checked'; ?> id="" required>
-                            <label for="part time">Part Time</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" value="full time" <?php if ($jobs['status'] == 'full time') echo 'checked'; ?> id="" required>
+                                <label class="form-check-label" for="full time">Full Time</label>
+                                <br>
+                                <input class="form-check-input" type="radio" name="status" value="part time" <?php if ($jobs['status'] == 'part time') echo 'checked'; ?> id="" required>
+                                <label class="form-check-label" for="part time">Part Time</label>
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>Username</td>
                         <td>
-                            <select name="username" required>
+                            <select name="username" class="form-select" required>
                                 <option value="">Username</option>
                                 <?php foreach ($users as $m) : ?>
                                     <option value="<?= $m['username']; ?>" <?= $jobs['username'] == $m['username'] ? 'selected' : ''; ?>>
