@@ -14,7 +14,7 @@ $data_level = select("SELECT * FROM user_level");
     </div>
     <table class="table table-bordered table-striped mt-2">
         <thead>
-            <tr>
+            <tr class="table-dark">
                 <th>No</th>
                 <th>Level</th>
                 <th>Actions</th>
@@ -26,7 +26,7 @@ $data_level = select("SELECT * FROM user_level");
                 <tr>
                     <td><?= $no++; ?></td>
                     <td><?= $data['level']; ?></td>
-                    <td width="15%">
+                    <td class="table-info" width="15%">
                         <a href="update-level.php?id=<?= $data['id']; ?>" class="btn"><ion-icon style="font-size: 26px; color: chocolate;" name="create-outline"></ion-icon></a>
                         <a href="delete-level.php?id=<?= $data['id']; ?>" class="btn" onclick="return confirm('are you sure you want to delete this item?')"><ion-icon style="font-size: 26px; color: red;" name="trash-outline"></ion-icon></a>
                     </td>

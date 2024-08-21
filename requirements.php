@@ -14,7 +14,7 @@ $requirements = select('SELECT * FROM requirements')
     </div>
     <table class="table table-bordered table-striped mt-2">
         <thead>
-            <tr>
+            <tr class="table-dark">
                 <th>No</th>
                 <th>Require</th>
                 <th>Actions</th>
@@ -26,7 +26,7 @@ $requirements = select('SELECT * FROM requirements')
                 <tr>
                     <td><?= $no++; ?></td>
                     <td><?= $data['require']; ?></td>
-                    <td width="15%">
+                    <td class="table-info" width="15%">
                         <a href="update-requirements.php?id=<?= $data['id']; ?>" class="btn"><ion-icon style="font-size: 26px; color: chocolate;" name="create-outline"></ion-icon></a>
                         <a href="delete-requirements.php?id=<?= $data['id']; ?>" class="btn" onclick="return confirm('are you sure you want to delete this item?')"><ion-icon style="font-size: 26px; color: red;" name="trash-outline"></ion-icon></a>
                     </td>

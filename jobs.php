@@ -15,7 +15,7 @@ $data_fulljob = select("SELECT jobs.*, users.username, requirements.require FROM
     <div>
         <table class="table table-bordered table-striped mt-2">
             <thead>
-                <tr>
+                <tr class="table-dark">
                     <th>No</th>
                     <th>Name/Industry</th>
                     <th>Address</th>
@@ -39,7 +39,7 @@ $data_fulljob = select("SELECT jobs.*, users.username, requirements.require FROM
                         <td><?= $data['salary']; ?></td>
                         <td><?= $data['status']; ?></td>
                         <td><?= $data['username']; ?></td>
-                        <td width="15%">
+                        <td class="table-info" width="15%">
                             <a href="update-jobs.php?id=<?= $data['id']; ?>" class="btn"><ion-icon style="font-size: 26px; color: chocolate;" name="create-outline"></ion-icon></a>
                             <a href="delete-jobs.php?id=<?= $data['id']; ?>" class="btn" onclick="return confirm('are you sure you want to delete this item?')"><ion-icon style="font-size: 26px; color: red;" name="trash-outline"></ion-icon></a>
                         </td>

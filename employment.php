@@ -15,7 +15,7 @@ $data_employees = select("SELECT employment.*, users.username FROM employment
     </div>
     <table class="table table-bordered table-striped mt-2">
         <thead>
-            <tr>
+            <tr class="table-dark">
                 <th>No</th>
                 <th>Name</th>
                 <th>Age</th>
@@ -37,7 +37,7 @@ $data_employees = select("SELECT employment.*, users.username FROM employment
                     <td><?= $data['email']; ?></td>
                     <td><?= $data['bio']; ?></td>
                     <td width="10%"><?= $data['username']; ?></td>
-                    <td width="15%">
+                    <td class="table-info" width="15%">
                         <a href="update-employment.php?id=<?= $data['id']; ?>" class="btn"><ion-icon style="font-size: 26px; color: chocolate;" name="create-outline"></ion-icon></a>
                         <a href="delete-employment.php?id=<?= $data['id']; ?>" class="btn" onclick="return confirm('are you sure you want to delete this item?')"><ion-icon style="font-size: 26px; color: red;" name="trash-outline"></ion-icon></a>
                     </td>

@@ -37,7 +37,7 @@ include 'api.php';
     body {
         margin: 0;
         padding: 0;
-        background-color: #F7EFE5;
+        background-color: #d1d1e9;
         font-family: "Poppins", sans-serif;
         font-weight: 400;
         font-style: normal;
@@ -51,28 +51,49 @@ include 'api.php';
         font-weight: bold;
         font-size: 48px;
     }
+    
+    .dropdown-item:focus {
+        background: #2b2c34;
+    }
 </style>
 
 <body>
     <div>
-        <nav style="background-color: #674188;" class="navbar navbar-expand-lg navbar-dark">
+        <nav style="background-color: #2b2c34;" class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <a class="navbar-brand" id="navlog" href="dashboard.php">JOBS4EZ</a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav align-items-center">
-                        <a href="jobs.php" class="btn btn-outline-light">Jobs</a>
-                        <a href="employment.php" class="btn btn-outline-light mx-3">Employment</a>
-                        <a href="users.php" class="btn btn-outline-light">Users</a>
-                        <a href="requirements.php" class="btn btn-outline-light mx-3">Requirements</a>
-                        <a href="level.php" class="btn btn-outline-light">Role</a>
+                    <div class="navbar-nav">
+                        <a href="dashboard.php" class="btn btn-outline-light">Home</a>
+                        <div class="dropdown">
+                            <button class=" btn btn-outline-light ms-3 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</button>
+                            <ul class="dropdown-menu bg-dark-subtle">
+                                <li>
+                                    <a href="jobs.php" class="dropdown-item">Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="employment.php" class="dropdown-item">Employment</a>
+                                </li>
+                                <li>
+                                    <a href="users.php" class="dropdown-item">Users</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a href="requirements.php" class="dropdown-item">Requirements</a>
+                                </li>
+                                <li>
+                                    <a href="level.php" class="dropdown-item">Role</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
-
-
-    <script src="bootstrap/js/bootstrap.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

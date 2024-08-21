@@ -1,28 +1,34 @@
 <?php
 
-include_once 'header.php';
+include 'header.php';
+
 $level = select("SELECT * FROM user_level");
 
 if (isset($_POST['tambah'])) {
-    if (create_users($_POST) > 0) {
+    if ($_POST['age'] < 17) {
         echo "<script>
-                alert('Data Berhasil Ditambah');
-                document.location.href = 'dashboard.php';
-              </script>";
+        alert('Age cannot be below 17');
+      </script>";
     } else {
-        echo "<script>
-                alert('Data gagal ditambahkan');
-                document.location.href = 'dashboard.php';
-              </script>";
+        if (create_users($_POST) > 0) {
+            echo "<script>
+                    alert('Data Successfully Created');
+                    document.location.href = 'users.php';
+                    </script>";
+        } else {
+            echo "<script>
+                    alert('Data Failed to Create');
+                    document.location.href = 'users.php';
+                  </script>";
+        }
     }
 }
 ?>
 
 <div class="container">
     <div class="row mt-3">
-        <h3>Register a new users</h3>
+        <h3>Register a New User</h3>
     </div>
-
     <div class="row mt-3">
         <form method="POST" action="">
             <table class="table table-bordered">
@@ -44,15 +50,14 @@ if (isset($_POST['tambah'])) {
                     <tr>
                         <td>Email</td>
                         <td>
-                            <input autocomplete="off" id="Email" value="" class="form-control" type="email"
+                            <input autocomplete="off" id="email" value="" class="form-control" type="email"
                                 name="email" required>
                         </td>
                     </tr>
                     <tr>
                         <td>Age</td>
                         <td>
-                            <input autocomplete="off" id="age" value="" class="form-control" type="number"
-                                name="age" required>
+                            <input autocomplete="off" class=" form-control" type="number" name="age" id="age" min="17" required>
                         </td>
                     </tr>
                     <tr>
@@ -63,13 +68,33 @@ if (isset($_POST['tambah'])) {
                         </td>
                     </tr>
                     <tr>
+                    <td>Status</td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="status" value="industry" checked required><label class="form-check-label" for="industry">Industry</label>
+                                <br>
+                                <input class="form-check-input" type="radio" name="status" id="status" value="worker" required><label class="form-check-label" for="worker">Worker</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Bio</td>
                         <td>
                             <input autocomplete="off" id="bio" value="" class="form-control" type="text"
                                 name="bio" required>
                         </td>
                     </tr>
-                    <input type="hidden" name="id_level" value="1">
+                    <tr>
+                        <td>Role</td>
+                        <td>
+                            <select name="id_level" class="form-select" required>
+                                <option value="" selected>User role</option>
+                                <?php foreach ($level as $m) : ?>
+                                    <option value="<?= $m['id']; ?>"><?= $m['level']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
                     <tr>
                         <td></td>
                         <td>

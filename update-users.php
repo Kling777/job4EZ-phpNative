@@ -34,7 +34,7 @@ if (isset($_POST['ubah'])) {
     </div>
     <div class="row mt-3">
         <form method="POST" action="">
-            <table class="table table-bordered">
+            <table class="table table-secondary">
                 <tbody>
                     <input type="hidden" name="id_user" value="<?= $users['id_user']; ?>">
                     <tr>
@@ -104,7 +104,7 @@ if (isset($_POST['ubah'])) {
                         </td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td>Confirm</td>
                         <td>
                             <button class="btn btn-success" id="ubah" name="ubah" type="submit">Ubah</button>
                         </td>

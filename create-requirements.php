@@ -24,7 +24,7 @@ if (isset($_POST['tambah'])) {
     </div>
     <div class="row mt-3">
         <form method="POST" action="">
-            <table class="table table-bordered">
+            <table class="table table-secondary">
                 <tbody>
                     <tr>
                         <td>Require</td>
@@ -34,7 +34,7 @@ if (isset($_POST['tambah'])) {
                         </td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td>Confirm</td>
                         <td>
                             <button class="btn btn-success" id="tambah" name="tambah" type="submit">Submit</button>
                         </td>
