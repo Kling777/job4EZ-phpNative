@@ -51,3 +51,6 @@ $data_users = select("SELECT users.*, user_level.level FROM users
         </tbody>
     </table>
 </div>
+<footer>
+    <img src="assets/half.png" alt="peep-3" class="peep-3" width="210" height="250">
+</footer>

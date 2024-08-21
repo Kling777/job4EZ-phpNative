@@ -55,6 +55,13 @@ include 'api.php';
     .dropdown-item:focus {
         background: #2b2c34;
     }
+    .peep-3 {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin-bottom: -30px;
+        z-index: -1;
+    }
 </style>
 
 <body>
@@ -97,5 +104,4 @@ include 'api.php';
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

@@ -4,6 +4,7 @@ $data_fulljob = select("SELECT jobs.*, users.username, requirements.require FROM
                     LEFT JOIN users ON jobs.username = users.username
                     LEFT JOIN requirements ON jobs.require = requirements.require");
 ?>
+
 <div class="container text-center">
     <div class=" d-flex justify-content-between align-items-center me-3 mt-4">
         <h3 class="">All Full Time Jobs Available : <?php
@@ -49,3 +50,6 @@ $data_fulljob = select("SELECT jobs.*, users.username, requirements.require FROM
         </table>
     </div>
 </div>
+<footer>
+    <img src="assets/half.png" alt="peep-3" class="peep-3" width="210" height="250">
+</footer>

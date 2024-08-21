@@ -46,3 +46,6 @@ $data_employees = select("SELECT employment.*, users.username FROM employment
         </tbody>
     </table>
 </div>
+<footer>
+    <img src="assets/half.png" alt="peep-3" class="peep-3" width="210" height="250">
+</footer>

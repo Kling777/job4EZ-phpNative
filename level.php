@@ -35,3 +35,6 @@ $data_level = select("SELECT * FROM user_level");
         </tbody>
     </table>
 </div>
+<footer>
+    <img src="assets/half.png" alt="peep-3" class="peep-3" width="210" height="250">
+</footer>

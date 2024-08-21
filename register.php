@@ -96,7 +96,7 @@ if (isset($_POST['tambah'])) {
                         </td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td>Confirm</td>
                         <td>
                             <button class="btn btn-success" id="tambah" name="tambah" type="submit">Submit</button>
                         </td>
