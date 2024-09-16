@@ -106,7 +106,7 @@ if (isset($_POST['ubah'])) {
                     <tr>
                         <td>Confirm</td>
                         <td>
-                            <button class="btn btn-success" id="ubah" name="ubah" type="submit">Ubah</button>
+                            <button class="btn btn-success" id="ubah" name="ubah" type="submit">Submit</button>
                         </td>
                     </tr>
                 </tbody>

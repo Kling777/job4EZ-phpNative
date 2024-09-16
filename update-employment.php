@@ -73,7 +73,7 @@ if (isset($_POST['ubah'])) {
                         </td>
                     </tr>
                     <tr>
-                        <td>User ID</td>
+                        <td>Username</td>
                         <td>
                             <select name="username" class="form-select" required>
                                 <option value="">Choose Username</option>
@@ -88,7 +88,7 @@ if (isset($_POST['ubah'])) {
                     <tr>
                         <td>Confirm</td>
                         <td>
-                            <button class="btn btn-success" id="ubah" name="ubah" type="submit">Ubah</button>
+                            <button class="btn btn-success" id="ubah" name="ubah" type="submit">Submit</button>
                         </td>
                     </tr>
                 </tbody>

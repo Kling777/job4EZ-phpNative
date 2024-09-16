@@ -71,30 +71,12 @@ include 'api.php';
                 <a class="navbar-brand" id="navlog" href="dashboard.php">JOBS4EZ</a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a href="dashboard.php" class="btn btn-outline-light">Home</a>
-                        <div class="dropdown">
-                            <button class=" btn btn-outline-light ms-3 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</button>
-                            <ul class="dropdown-menu bg-dark-subtle">
-                                <li>
-                                    <a href="jobs.php" class="dropdown-item">Jobs</a>
-                                </li>
-                                <li>
-                                    <a href="employment.php" class="dropdown-item">Employment</a>
-                                </li>
-                                <li>
-                                    <a href="users.php" class="dropdown-item">Users</a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li>
-                                    <a href="requirements.php" class="dropdown-item">Requirements</a>
-                                </li>
-                                <li>
-                                    <a href="level.php" class="dropdown-item">Role</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <a href="dashboard.php" class="btn btn-outline-warning">Home</a>
+                        <a href="jobs.php" class="btn btn-outline-light ms-3">Jobs</a>
+                        <a href="employment.php" class="btn btn-outline-light mx-3">Employment</a>
+                        <a href="users.php" class="btn btn-outline-light">Users</a>
+                        <a href="requirements.php" class="btn btn-outline-light mx-3">Requirements</a>
+                        <a href="level.php" class="btn btn-outline-light">Role</a>
                     </div>
                 </div>
             </div>
